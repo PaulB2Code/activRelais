@@ -38,14 +38,14 @@ func New() (Relay, error) {
 	return Relay{On: relaisPinOn, Off: relaisPinOff}, nil
 }
 
-func (r *Relay) pOff() {
+func (r *Relay) POff() {
 	r.Off.Low()
 	r.On.Low()
 	time.Sleep(timeDelay)
 	r.On.High()
 }
 
-func (r *Relay) pOn() {
+func (r *Relay) POn() {
 	r.On.Low()
 	r.Off.Low()
 	time.Sleep(timeDelay)

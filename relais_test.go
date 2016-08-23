@@ -1,12 +1,12 @@
 package Relay
 
 import (
+	"fmt"
 	"testing"
 	"time"
 )
 
 func TestRelay(t *testing.T) {
-	t.Log("Start Test Relay")
 
 	r, err := New()
 
@@ -14,23 +14,28 @@ func TestRelay(t *testing.T) {
 		t.Error("Error Start relay ", err)
 	}
 
-	t.Log("Off the relay")
-	r.pOff()
+	fmt.Println("Off the relay")
+	r.POff()
 
 	time.Sleep(2 * time.Second)
 
-	t.Log("On the relay")
-	r.pOn()
+	fmt.Println("On the relay")
+	r.POn()
 
 	time.Sleep(2 * time.Second)
 
-	t.Log("Off the relay")
-	r.pOff()
+	fmt.Println("Off the relay")
+	r.POff()
 
 	time.Sleep(2 * time.Second)
 
-	t.Log("On the relay")
-	r.pOn()
+	fmt.Println("Off the relay")
+	r.POff()
+
+	time.Sleep(2 * time.Second)
+
+	fmt.Println("On the relay")
+	r.POn()
 
 	time.Sleep(2 * time.Second)
 
